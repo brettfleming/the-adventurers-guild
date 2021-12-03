@@ -1,5 +1,5 @@
-# the-colony
-uses React and Mongo to view Mars info, develop a profile, and post to the Colony's feed
+# the-adventurers-guild
+
 
 ## Table of Contents
 
@@ -12,7 +12,6 @@ uses React and Mongo to view Mars info, develop a profile, and post to the Colon
 
   ## Description
 
-  The Colony is a PC and mobile app designed to function as a placeholder.
   
   ## Technologies:
 
@@ -22,24 +21,13 @@ uses React and Mongo to view Mars info, develop a profile, and post to the Colon
 
   ## Deployment:
 
-  Check out the app on Heroku:
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)]()
-
   ## License
   
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
   
   ## Contact
 
-  * If you have any questions/concerns regarding the app, please reach out to our GitHub profiles: brettfleming, Chaoly123, CortlandSB, goreno41, tedheikkila
+  * If you have any questions/concerns regarding the app, please reach out to our GitHub profiles: brettfleming
 
 ## Screenshots
 
-* home
-
-    ![](./client/public/screenshots/proj3-1.png)
-
-* log in/sign up
-
-    ![](./client/public/screenshots/proj3-2.png)
