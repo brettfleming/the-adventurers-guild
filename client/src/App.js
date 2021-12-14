@@ -4,7 +4,8 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import userProfile from './pages/userprofile';
 import roverProfile from './pages/rover';
-import feed from './pages/feed';
+import loginPage from './pages/login';
+
 
 function App() {
   return (
@@ -12,9 +13,8 @@ function App() {
       <>
         <Navbar />
         <Switch>
-          <Route exact path='/' component={roverProfile} />
+          <Route exact path='/' component={loginPage} />
           <Route exact path='/userprofile' component={userProfile} />
-          <Route exact path='/feed' component={feed} />
         </Switch>
         <Footer />
       </>
