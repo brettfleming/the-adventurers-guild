@@ -98,6 +98,18 @@ const LoginForm = () => {
                                 Something went wrong with your login credentials!
                             </Alert>
                             <Form.Group>
+                                <Form.Label htmlFor='name'>Name</Form.Label>
+                                <Form.Control
+                                    type='text'
+                                    placeholder='Your name'
+                                    name='name'
+                                    onChange={handleInputChange}
+                                    value={SignUpFormData.name}
+                                    required
+                                />
+                                <Form.Control.Feedback type='invalid'>Name is required!</Form.Control.Feedback>
+                            </Form.Group>
+                            <Form.Group>
                                 <Form.Label htmlFor='username'>Username</Form.Label>
                                 <Form.Control
                                     type='text'
