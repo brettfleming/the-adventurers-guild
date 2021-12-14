@@ -133,6 +133,18 @@ const LoginForm = () => {
                                 />
                                 <Form.Control.Feedback type='invalid'>Email is required!</Form.Control.Feedback>
                             </Form.Group>
+                            <Form.Group>
+                                <Form.Label htmlFor='password'>Password</Form.Label>
+                                <Form.Control
+                                    type='text'
+                                    placeholder='Your password'
+                                    name='password'
+                                    onChange={handleInputChange}
+                                    value={SignUpFormData.password}
+                                    required
+                                />
+                                <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
+                            </Form.Group>
                         </Form>
 
                     </div>
