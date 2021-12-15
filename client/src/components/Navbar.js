@@ -15,13 +15,13 @@ const AppNavbar = () => {
       <Navbar expand='lg' className="t-nav-bar">
         <Container fluid>
           <Navbar.Brand as={Link} to='/' id="t-nav-title">
-            the Colony
+            The Adbenturers Guild
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='navbar' />
           <Navbar.Collapse id='navbar'>
             <Nav className='ml-auto' id="t-navbar-item">
-              <Nav.Link as={Link} to='/feed' id="t-nav-link-feed">
-                Feed
+              <Nav.Link as={Link} to='/home' id="t-nav-link-home">
+                Home
               </Nav.Link>
               {/* if user is logged in show saved books and logout */}
               {Auth.loggedIn() ? (
@@ -38,38 +38,6 @@ const AppNavbar = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      {/* set modal data up */}
-      <Modal
-        size='lg'
-        show={showModal}
-        onHide={() => setShowModal(false)}
-        aria-labelledby='signup-modal'>
-        {/* tab container to do either signup or login component */}
-        <Tab.Container defaultActiveKey='login'>
-          <Modal.Header closeButton>
-            <Modal.Title id='signup-modal'>
-              <Nav variant='pills'>
-                <Nav.Item>
-                  <Nav.Link eventKey='login' id="login-modal">Log In</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey='signup' id="signup-modal">Sign Up</Nav.Link>
-                </Nav.Item>
-              </Nav>
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <Tab.Content>
-              <Tab.Pane eventKey='login'>
-                <LoginForm handleModalClose={() => setShowModal(false)} />
-              </Tab.Pane>
-              <Tab.Pane eventKey='signup'>
-                <SignUpForm handleModalClose={() => setShowModal(false)} />
-              </Tab.Pane>
-            </Tab.Content>
-          </Modal.Body>
-        </Tab.Container>
-      </Modal>
     </>
   );
 };
