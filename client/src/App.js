@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import userProfile from './pages/userprofile';
 import roverProfile from './pages/rover';
 import loginPage from './pages/login';
+import homePage from './pages/home';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path='/' component={loginPage} />
+          <Route exact path='/home' component={homePage}/>
           <Route exact path='/userprofile' component={userProfile} />
         </Switch>
         <Footer />

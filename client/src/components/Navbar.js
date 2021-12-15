@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
-import SignUpForm from './SignupForm';
-import LoginForm from './LoginForm';
-
+import { Navbar, Nav, Container} from 'react-bootstrap';
 import Auth from '../utils/auth';
 
 const AppNavbar = () => {
@@ -14,7 +11,7 @@ const AppNavbar = () => {
     <>
       <Navbar expand='lg' className="t-nav-bar">
         <Container fluid>
-          <Navbar.Brand as={Link} to='/' id="t-nav-title">
+          <Navbar.Brand as={Link} to='/home' id="t-nav-title">
             The Adbenturers Guild
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='navbar' />
