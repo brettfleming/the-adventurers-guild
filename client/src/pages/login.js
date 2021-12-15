@@ -1,17 +1,21 @@
 import React, { useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
-import { loginUser } from '../utils/API';
+import { loginUser, createUser } from '../utils/API';
 import Auth from '../utils/auth';
 
 const LoginForm = () => {
     const [LoginFormData, setUserFormData] = useState({ email: '', password: '' });
-    const [SignUpFormData, setUserFormData] = useState({ email: '', password: '', username: '', name: '' });
+    const [SignUpFormData, setSignUpFormData] = useState({ email: '', password: '', username: '', name: '' });
     const [validated] = useState(false);
     const [showAlert, setShowAlert] = useState(false);
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setUserFormData({ ...LoginFormData, [name]: value });
+    };
+    const handleInputChange2 = (event) => {
+        const { name, value } = event.target;
+        setSignUpFormData({ ...SignUpFormData, [name]: value });
     };
 
     const handleLoginFormSubmit = async (event) => {
@@ -71,7 +75,7 @@ const LoginForm = () => {
           setShowAlert(true);
         }
     
-        setUserFormData({
+        setSignUpFormData({
           username: '',
           email: '',
           password: '',
@@ -136,7 +140,7 @@ const LoginForm = () => {
                                     type='text'
                                     placeholder='Your name'
                                     name='name'
-                                    onChange={handleInputChange}
+                                    onChange={handleInputChange2}
                                     value={SignUpFormData.name}
                                     required
                                 />
@@ -148,7 +152,7 @@ const LoginForm = () => {
                                     type='text'
                                     placeholder='Your username'
                                     name='username'
-                                    onChange={handleInputChange}
+                                    onChange={handleInputChange2}
                                     value={SignUpFormData.username}
                                     required
                                 />
@@ -160,7 +164,7 @@ const LoginForm = () => {
                                     type='text'
                                     placeholder='Your email'
                                     name='email'
-                                    onChange={handleInputChange}
+                                    onChange={handleInputChange2}
                                     value={SignUpFormData.email}
                                     required
                                 />
@@ -169,15 +173,22 @@ const LoginForm = () => {
                             <Form.Group>
                                 <Form.Label htmlFor='password'>Password</Form.Label>
                                 <Form.Control
-                                    type='text'
+                                    type='password'
                                     placeholder='Your password'
                                     name='password'
-                                    onChange={handleInputChange}
+                                    onChange={handleInputChange2}
                                     value={SignUpFormData.password}
                                     required
                                 />
                                 <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
                             </Form.Group>
+                            <Button
+                                disabled={!(SignUpFormData.email && SignUpFormData.password && SignUpFormData.name && SignUpFormData.username)}
+                                type='submit'
+                                variant='success'
+                                id="t-login-modal-btn">
+                                Submit
+                            </Button>
                         </Form>
 
                     </div>

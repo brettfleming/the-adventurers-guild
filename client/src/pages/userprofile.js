@@ -4,9 +4,6 @@ import ProfileForm from '../components/ProfileForm';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown'
 
-import { getCurrentDate } from '../utils/functions'
-import { searchWeatherApi } from '../utils/API'
-
 const UserProfile = () => {
 
   const [showProfileModal, setShowProfileModal] = useState(false);
@@ -18,88 +15,6 @@ const UserProfile = () => {
   const [marsAge, setMarsAge] = useState('0');
   const [marsWeight, setMarsWeight] = useState('0');
 
-  // weather api call
-  const getWeather = async () => {
-
-    let storedUserData = JSON.parse(localStorage.getItem("user"));
-    if (storedUserData === null) {
-      var query = "minneapolis"
-    } else
-      var query = storedUserData.city
-
-    try {
-      const response = await searchWeatherApi(query);
-      const data = await response.json();
-      let currentTemp = Math.round(((data.main.temp - 273.15) * 9 / 5) + 32)
-      let currentHumidity = data.main.humidity
-      let currentWind = data.wind.speed
-      let currentOvercast = data.weather[0].description
-      let currentIcon = 'http://openweathermap.org/img/wn/' + data.weather[0].icon + '@2x.png'
-
-      localStorage.setItem("temp", JSON.stringify(currentTemp));
-      localStorage.setItem("hum", JSON.stringify(currentHumidity));
-      localStorage.setItem("wind", JSON.stringify(currentWind));
-      localStorage.setItem("overcast", JSON.stringify(currentOvercast));
-      localStorage.setItem("icon", JSON.stringify(currentIcon));
-
-    } catch (err) {
-      console.error(err);
-      setShowAlert(true);
-    }
-  };
-  getWeather()
-
-  // weather retrievals
-  function getStoredTemp() {
-    let storedTemp = JSON.parse(localStorage.getItem("temp"));
-
-    if (storedTemp === null) {
-      var useTemp = ""
-      return useTemp
-    } else
-      return `${storedTemp} F`
-  }
-  getStoredTemp()
-
-  function getStoredHum() {
-    let storedHum = JSON.parse(localStorage.getItem("hum"));
-    if (storedHum === null) {
-      var useHum = ""
-      return useHum
-    } else
-      return `${storedHum} %`
-  }
-  getStoredHum()
-
-  function getStoredWind() {
-    let storedWind = JSON.parse(localStorage.getItem("wind"));
-    if (storedWind === null) {
-      var useWind = ""
-      return useWind
-    } else
-      return `${storedWind} mph`
-  }
-  getStoredWind()
-
-  function getStoredOvercast() {
-    let storedOvercast = JSON.parse(localStorage.getItem("overcast"));
-    if (storedOvercast === null) {
-      var useOvercast = ""
-      return useOvercast
-    } else
-      return `${storedOvercast}`
-  }
-  getStoredOvercast()
-
-  function getStoredIcon() {
-    let storedIcon = JSON.parse(localStorage.getItem("icon"));
-    if (storedIcon === null) {
-      var useIcon = "./assets/images/weather-icon.png"
-      return useIcon
-    } else
-      return `${storedIcon}`
-  }
-  getStoredOvercast()
 
   // planet
   const handlePlanet = (event) => {
@@ -347,12 +262,6 @@ const UserProfile = () => {
           <div className="card-body">
             <h4 className="body-title">{getUserCity()}</h4>
             <p className="user-text">Age: {getUserAge()}</p>
-            <p className="date-text">{getCurrentDate()}</p>
-            <span className="overcast-text">{getStoredOvercast()}</span>
-            <img className="icon-text" src={getStoredIcon()} width="70" height="70" alt="Weather Icon"></img>
-            <p className="temp-text">Temp: {getStoredTemp()}</p>
-            <p className="hum-text">Humidity: {getStoredHum()}</p>
-            <p className="wind-text">Wind: {getStoredWind()}</p>
           </div>
         </Card>
         <Card className="zodiac-card">
