@@ -26,6 +26,10 @@ const characterSchema = new Schema(
         },
         skills: {
             type: String,
+        },
+        alignment: {
+            type: String,
+            required: true,
         }
     }
 

@@ -10,7 +10,7 @@ const Footer = () => {
             <ul className="nav justify-content-center">
                 <li className="t-footer-item">
                     <a
-                        href="https://github.com/tedheikkila/the-colony"
+                        href=""
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={() => ('')}
@@ -19,7 +19,7 @@ const Footer = () => {
                     </a>
                 </li>
                 <li className="t-footer-copyright">
-                    <span>the Colony @ 2021</span>
+                    <span>The Adventurers Guild @ 2021</span>
                 </li>
             </ul>
         </footer>
