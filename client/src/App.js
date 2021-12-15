@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 import userProfile from './pages/userprofile';
 import loginPage from './pages/login';
 import homePage from './pages/home';
-
+import createPage from './pages/createCharacter';
 
 function App() {
   return (
@@ -15,6 +15,7 @@ function App() {
         <Switch>
           <Route exact path='/' component={loginPage} />
           <Route exact path='/home' component={homePage}/>
+          <Route exact path='/create' component={createPage}/>
           <Route exact path='/userprofile' component={userProfile} />
         </Switch>
         <Footer />
