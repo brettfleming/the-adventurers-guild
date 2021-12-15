@@ -25,13 +25,6 @@ router.route('/feed').post(createPost, addPostToUser);
 
 router.route('/feed').put(authMiddleware, addPostToUser);
 
-
-// router.post("/feed", async (req, res) => {
-//   const {_id} = await createPost(req)
-  // call the user model and add the id of the post that just got created
-// })
-
-
 router.route('/posts/:postId').delete(authMiddleware, deletePost);
 
 module.exports = router;

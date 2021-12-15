@@ -30,12 +30,6 @@ const userSchema = new Schema(
     age: {
       type: Number,
     },
-    weight: {
-      type: Number,
-    },
-    city: {
-      type: String
-    },
     posts: [{
       type: Schema.Types.ObjectId,
       ref: "Post"
