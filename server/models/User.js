@@ -1,8 +1,8 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
-const Post = require('./Post');
-
+const Characters = require('./Characters');
+// const Post = require('./Post');
 
 // const postSchema = require('./Post');
 
@@ -30,10 +30,14 @@ const userSchema = new Schema(
     age: {
       type: Number,
     },
-    posts: [{
+    characters: [{
       type: Schema.Types.ObjectId,
-      ref: "Post"
-    }]
+      ref: "Characters"
+    }], 
+    // posts: [{
+    //   type: Schema.Types.ObjectId,
+    //   ref: "Post"
+    // }]
   },
   // set this to use virtual below
   {
