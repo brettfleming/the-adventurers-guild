@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // local Robo 3T db = et
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/colony', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/AGDB', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
