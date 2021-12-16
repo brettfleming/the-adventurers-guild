@@ -4,6 +4,8 @@ import { Form, Button, Alert } from 'react-bootstrap';
 
 
 const CreateCharacter = () => {
+    const [validated] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
    let api ="https://www.dnd5eapi.co/api/"
    const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -30,7 +32,9 @@ const CreateCharacter = () => {
     return <div>Loading...</div>;
   } else {
     return (
-    <h1>hi</h1> 
+        <>
+        <Form></Form>
+        </>
     )
   }
 }
