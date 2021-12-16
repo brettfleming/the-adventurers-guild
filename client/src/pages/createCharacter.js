@@ -4,6 +4,7 @@ import { Form, Button, Alert } from 'react-bootstrap';
 
 
 const CreateCharacter = () => {
+    const [characterFormData, setCharacterFormData] = useState({name: '', race: ''})
     const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
    let api ="https://www.dnd5eapi.co/api/"
@@ -24,6 +25,10 @@ const CreateCharacter = () => {
         }
       )
   }, [])
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setCharacterFormData({ ...characterFormData, [name]: value });
+  };
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
@@ -35,7 +40,7 @@ const CreateCharacter = () => {
     }
 
     try {
-      const response = await loginUser(userFormData);
+      const response = ''
 
       if (!response.ok) {
         throw new Error('something went wrong!');
@@ -49,11 +54,10 @@ const CreateCharacter = () => {
       setShowAlert(true);
     }
 
-    setUserFormData({
-      username: '',
-      email: '',
-      password: '',
-    });
+    setCharacterFormData({
+      name: '',
+      race: ''
+    })};
   console.log(apiData);
 
   if (error) {
