@@ -67,7 +67,23 @@ const CreateCharacter = () => {
   } else {
     return (
         <>
-        <Form noValidate validated={validated} onSubmit={handleFormSubmit}></Form>
+        <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+        <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
+          Something went wrong!
+        </Alert>
+        <Form.Group>
+          <Form.Label htmlFor='name'>Name</Form.Label>
+          <Form.Control
+            type='text'
+            placeholder='Name'
+            name='name'
+            onChange={handleInputChange}
+            value={characterFormData.name}
+            required
+          />
+          <Form.Control.Feedback type='invalid'>Name is required!</Form.Control.Feedback>
+        </Form.Group>
+        </Form>
         </>
     )
   }
