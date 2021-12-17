@@ -100,10 +100,11 @@ const CreateCharacter = () => {
                     </Form.Group>
                     <Form.Group controlId="formGridState">
                         <Form.Label>Class</Form.Label>
+                        {console.log(classNameData)}
                         <Form.Control as="select" placeholder="class">
-                            
-                            <option>Choose...</option>
-                            <option>...</option>
+                            {/* {classNameData.map((className) => (
+                                <option key={className.index}>{className.name}</option>
+                            ))} */}
                         </Form.Control>
                     </Form.Group>
 
