@@ -28,7 +28,7 @@ const CreateCharacter = () => {
                     setError(error);
                 }
             )
-            fetch("https://www.dnd5eapi.co/api/races")
+        fetch("https://www.dnd5eapi.co/api/races")
             .then(res => res.json())
             .then(
                 (result) => {
@@ -114,7 +114,11 @@ const CreateCharacter = () => {
                     </Form.Group>
                     <Form.Group controlId="formGridState">
                         <Form.Label>Class</Form.Label>
-                        <Form.Control as="select" placeholder="class">
+                        <Form.Control as="select"
+                            placeholder="class"
+                            onChange={handleInputChange}
+                            value={characterFormData.class}
+                            required>
                             {classNameData.map((className) => {
                                 return (
                                     <option key={className.index}>{className.name}</option>
