@@ -88,9 +88,9 @@ const LoginForm = () => {
         <>
             <div>
                 <div className='loginForm'>
-                    <div>
+                    <div className='loginForm-top'>
                         <h2>Login</h2>
-                        <Form  noValidate validated={validated} onSubmit={handleLoginFormSubmit}>
+                        <Form noValidate validated={validated} onSubmit={handleLoginFormSubmit}>
                             <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
                                 Something went wrong with your login credentials!
                             </Alert>
@@ -126,9 +126,6 @@ const LoginForm = () => {
                                 Submit
                             </Button>
                         </Form>
-
-                    </div>
-                    <div>
                         <h2>Sign up</h2>
                         <Form noValidate validated={validated} onSubmit={handleSignUpFormSubmit}>
                             <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
