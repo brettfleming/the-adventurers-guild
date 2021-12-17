@@ -1,10 +1,10 @@
 /* color palette */ 
 :root {
-  --one: #f0e7e7;
-  --two: #452804;
-  --three: #c1440e;
-  --four: #e77d11;
-  --five: #0e0e49;
+  --one: #000000;
+  --two: #14213D;
+  --three: #FCA311;
+  --four: #E5E5E5;
+  --five: #FFFFFF;
   --six: #9ce0fc;
   --seven: rgb(37, 32, 28);
 
@@ -12,15 +12,15 @@
 
 /* root id */
 #root {
-  background-color: var(--five);
+  background-color: var(--one);
   font-family: 'Orbitron', sans-serif;
 }
 
 /* nav bar */
 .t-nav-bar {
-  background-color: var(--four);
+  background-color: var(--one);
   padding: 30px;
-  border-bottom: 20px solid var(--six);
+  border-bottom: 20px solid var(--two);
   font-size: 18px;
 }
 
@@ -240,68 +240,6 @@ body {
   padding: 15px;
   font-size: 20px;
 }
-
-#edit-profile-btn:hover {
-  background-color: white;
-  color: black
-}
-
-.profile-cardgroup {
-  width: 90%;
-  margin-left: 5%;
-  margin-right: 5%;
-  margin-bottom: 10%;
-  margin-top: -2%;
-}
-
-#planet-header, #zodiac-header {
-  background-color: black;
-  color: white;
-  border-bottom: solid white 5px
-}
-
-#planet-header {
-  background-color: var(--five)
-}
-
-#username-header {
-  border-bottom: solid black 5px;
-}
-
-#username-header {
-  background-color: var(--one);
-  color: black
-}
-
-.planet-card, .username-card, .zodiac-card {
-  margin: 5%;
-  background-color: var(--one);
-}
-
-.planet-card, .zodiac-card {
-  background-color: var(--seven);
-  margin-bottom: -50px;
-  color: white;
-  border-top: solid 5px white;
-  border-bottom: solid 5px white;
-}
-
-.planet-img {
-  width: 100%;
-  object-fit: cover;
-  filter: saturate(230%);
-  border-radius: 30px;
-  margin: 10px
-}
-
-.zodiac-img {
-  width: 100%;
-  margin: 10px;
-  object-fit: cover;
-  filter: saturate(1000%);
-  border-radius: 30px;
-}
-
 #profile-btn-submit {
   background-color: var(--two);
   border: none
@@ -347,8 +285,8 @@ body {
 
 /* footer */
 .t-colony-footer {
-  background-color: var(--four);
-  border-top: 20px solid var(--six);
+  background-color: var(--one);
+  border-top: 20px solid var(--two);
 }
 
 .t-footer-item {
