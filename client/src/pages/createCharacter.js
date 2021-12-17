@@ -45,6 +45,14 @@ const CreateCharacter = () => {
         const { name, value } = event.target;
         setCharacterFormData({ ...characterFormData, [name]: value });
     };
+    const handleInputChangeRace = (event) => {
+        const { name, value } = event.target;
+        setCharacterFormData({ ...characterFormData, [name]: value });
+    };
+    const handleInputChangeClass = (event) => {
+        const { name, value } = event.target;
+        setCharacterFormData({ ...characterFormData, [name]: value });
+    };
     const handleFormSubmit = async (event) => {
         event.preventDefault();
 
@@ -104,7 +112,7 @@ const CreateCharacter = () => {
                         <Form.Label>Class</Form.Label>
                         <Form.Control as="select"
                             placeholder="class"
-                            onChange={handleInputChange}
+                            onChange={handleInputChangeClass}
                             value={characterFormData.class}
                             required>
                             {classNameData.map((className) => {
@@ -119,7 +127,7 @@ const CreateCharacter = () => {
                         <Form.Label>Race</Form.Label>
                         <Form.Control as="select"
                             placeholder="Race"
-                            onChange={handleInputChange}
+                            onChange={handleInputChangeRace}
                             value={characterFormData.race}
                             required>
                             {raceNameData.map((raceName) => {
