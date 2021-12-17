@@ -15,9 +15,10 @@
 }
 .loginForm {
   border: 2px solid var(--three);
-  margin-top: 8%;
-  margin-bottom: 8%;
-  margin-left: 8%;
+  color: var(--three);
+  margin-top: 5%;
+  margin-bottom: 15%;
+  margin-left: 15%;
   margin-right: 8%;
 }
 
@@ -55,35 +56,6 @@
 
 #t-nav-link:hover, #t-nav-link-feed:hover, #t-nav-link-profile:hover {
   text-decoration: underline 5px
-}
-
-
-
-.mainpic {
-  border-radius: 15%;
-}
-
-.border {
-  border: 250px, solid, var(--five);
-}
-
-.page-header {
-  text-align: center;
-  color: var(--two);
-}
-
-.margin {
-  margin-bottom: 25px;
-}
-
-.card {
-  background-color: var(--three);
-}
-
-.stats {
-  padding-bottom: 100px;
-  margin-right: 5%;
-  border-radius: 5%;
 }
 
 /* footer */
