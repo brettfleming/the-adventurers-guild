@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
+import axios from 'axios';
 
 import Auth from '../utils/auth';
 
@@ -19,7 +20,7 @@ const CreateCharacter = () => {
             .then(
                 (result) => {
                     setIsLoaded(true);
-                    setClassNameData(result);
+                    setClassNameData(result.results);
                 },
                 (error) => {
                     setIsLoaded(true);
@@ -68,7 +69,7 @@ const CreateCharacter = () => {
     } else if (!isLoaded) {
         return <div>Loading...</div>;
     } else {
-        return (
+        return(
             <>
                 <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
                     <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
@@ -100,11 +101,10 @@ const CreateCharacter = () => {
                     </Form.Group>
                     <Form.Group controlId="formGridState">
                         <Form.Label>Class</Form.Label>
-                        {console.log(classNameData)}
+                        {console.log(classNameData[0])}
                         <Form.Control as="select" placeholder="class">
-                            {/* {classNameData.map((className) => (
-                                <option key={className.index}>{className.name}</option>
-                            ))} */}
+                            {classNameData.map((className) => {
+                            return(<option key={className.index}>{className.name}</option>)})}
                         </Form.Control>
                     </Form.Group>
 
