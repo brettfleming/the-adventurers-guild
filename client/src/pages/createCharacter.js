@@ -13,6 +13,7 @@ const CreateCharacter = () => {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [classNameData, setClassNameData] = useState([])
+    const [raceNameData, setRaceNameData] = useState([])
     const [apiData, setApiData] = useState([])
     useEffect(() => {
         fetch("https://www.dnd5eapi.co/api/classes")
@@ -21,6 +22,18 @@ const CreateCharacter = () => {
                 (result) => {
                     setIsLoaded(true);
                     setClassNameData(result.results);
+                },
+                (error) => {
+                    setIsLoaded(true);
+                    setError(error);
+                }
+            )
+            fetch("https://www.dnd5eapi.co/api/races")
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setIsLoaded(true);
+                    setRaceNameData(result.results);
                 },
                 (error) => {
                     setIsLoaded(true);
@@ -62,7 +75,7 @@ const CreateCharacter = () => {
             race: ''
         })
     };
-    console.log(classNameData);
+    console.log(raceNameData);
 
     if (error) {
         return <div>Error: {error.message}</div>;
@@ -101,7 +114,6 @@ const CreateCharacter = () => {
                     </Form.Group>
                     <Form.Group controlId="formGridState">
                         <Form.Label>Class</Form.Label>
-                        {console.log(classNameData[0])}
                         <Form.Control as="select" placeholder="class">
                             {classNameData.map((className) => {
                                 return (
