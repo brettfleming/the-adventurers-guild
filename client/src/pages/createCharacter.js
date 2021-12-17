@@ -100,19 +100,7 @@ const CreateCharacter = () => {
                         />
                         <Form.Control.Feedback type='invalid'>Name is required!</Form.Control.Feedback>
                     </Form.Group>
-                    <Form.Group>
-                        <Form.Label htmlFor='class'>Class</Form.Label>
-                        <Form.Control
-                            type='text'
-                            placeholder='class'
-                            name='class'
-                            onChange={handleInputChange}
-                            value={characterFormData.class}
-                            required
-                        />
-                        <Form.Control.Feedback type='invalid'>class is required!</Form.Control.Feedback>
-                    </Form.Group>
-                    <Form.Group controlId="formGridState">
+                    <Form.Group controlId="class">
                         <Form.Label>Class</Form.Label>
                         <Form.Control as="select"
                             placeholder="class"
@@ -122,6 +110,21 @@ const CreateCharacter = () => {
                             {classNameData.map((className) => {
                                 return (
                                     <option key={className.index}>{className.name}</option>
+                                )
+                            })}
+                        </Form.Control>
+                        <Form.Control.Feedback type='invalid'>class is required!</Form.Control.Feedback>
+                    </Form.Group>
+                    <Form.Group controlId="race">
+                        <Form.Label>Race</Form.Label>
+                        <Form.Control as="select"
+                            placeholder="Race"
+                            onChange={handleInputChange}
+                            value={characterFormData.race}
+                            required>
+                            {raceNameData.map((raceName) => {
+                                return (
+                                    <option key={raceName.index}>{raceName.name}</option>
                                 )
                             })}
                         </Form.Control>
