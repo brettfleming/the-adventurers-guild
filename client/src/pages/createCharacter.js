@@ -69,7 +69,7 @@ const CreateCharacter = () => {
     } else if (!isLoaded) {
         return <div>Loading...</div>;
     } else {
-        return(
+        return (
             <>
                 <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
                     <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
@@ -104,7 +104,10 @@ const CreateCharacter = () => {
                         {console.log(classNameData[0])}
                         <Form.Control as="select" placeholder="class">
                             {classNameData.map((className) => {
-                            return(<option key={className.index}>{className.name}</option>)})}
+                                return (
+                                    <option key={className.index}>{className.name}</option>
+                                )
+                            })}
                         </Form.Control>
                     </Form.Group>
 
