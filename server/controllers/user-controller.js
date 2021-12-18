@@ -14,16 +14,6 @@ module.exports = {
     res.json(posts);
   },
 
-  async getColonies({ params }, res) {
-    const colonies = await Colony.findAll({});
-
-    if (!colonies) {
-      return res.status(400).json({ message: 'Cannot find  any Colonies' });
-    }
-
-    res.json(colonies);
-  },
-
   async getSingleUser({ user = null, params }, res) {
     const foundUser = await User.findOne({
       $or: [{ _id: user ? user._id : params.id }, { username: params.username }],
