@@ -52,18 +52,18 @@ module.exports = {
     res.json({ token, user });
   },
 
-  async addPostToUser(req, res) {
-    console.log(req)
-    try {
-      const updatedUser = await User.findOneAndUpdate(
-        { _id: user._id },
-        { $addToSet: { posts: body } },
-        { new: true, runValidators: true }
-      );
-      return res.json(updatedUser);
-    } catch (err) {
-      console.log(err);
-      return res.status(400).json(err);
-    }
-  }
+  // async addPostToUser(req, res) {
+  //   console.log(req)
+  //   try {
+  //     const updatedUser = await User.findOneAndUpdate(
+  //       { _id: user._id },
+  //       { $addToSet: { posts: body } },
+  //       { new: true, runValidators: true }
+  //     );
+  //     return res.json(updatedUser);
+  //   } catch (err) {
+  //     console.log(err);
+  //     return res.status(400).json(err);
+  //   }
+  // }
 };
