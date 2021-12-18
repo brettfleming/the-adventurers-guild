@@ -4,15 +4,6 @@ const { User, Post, Colony } = require('../models');
 const { signToken } = require('../utils/auth');
 
 module.exports = {
-  async getposts(req, res) {
-    const posts = await Post.find({});
-
-    if (!posts) {
-      return res.status(400).json({ message: 'Cannot find posts' });
-    }
-
-    res.json(posts);
-  },
 
   async getSingleUser({ user = null, params }, res) {
     const foundUser = await User.findOne({
