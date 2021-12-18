@@ -80,22 +80,6 @@ module.exports = {
       return res.status(400).json(err);
     }
   },
-  // save post to user's `savedPosts`
-  // async savePost({ user, body }, res) {
-  //   console.log(user);
-  //   try {
-  //     const updatedUser = await User.findOneAndUpdate(
-  //       { _id: user._id },
-  //       { $addToSet: { savedPosts: body } },
-  //       { new: true, runValidators: true }
-  //     );
-  //     return res.json(updatedUser);
-  //   } catch (err) {
-  //     console.log(err);
-  //     return res.status(400).json(err);
-  //   }
-  // },
-  // remove post from `savedPosts`
   async deletePost({ user, params }, res) {
     const updatedUser = await User.findOneAndUpdate(
       { _id: user._id },
