@@ -52,20 +52,6 @@ module.exports = {
     res.json({ token, user });
   },
 
-  async createPost({body}, res) {
-    // console.log("create post route")
-    try {
-      const createdPost = await Post.create( body )
-      if (!createdPost) {
-        return res.status(400).json({ message: 'Post not created' });
-      };
-      return res.json(createdPost);
-    } catch (err) {
-      console.log(err);
-      return res.status(400).json(err);
-    }
-  },
-
   async addPostToUser(req, res) {
     console.log(req)
     try {
