@@ -79,16 +79,5 @@ module.exports = {
       console.log(err);
       return res.status(400).json(err);
     }
-  },
-  async deletePost({ user, params }, res) {
-    const updatedUser = await User.findOneAndUpdate(
-      { _id: user._id },
-      { $pull: { savedPosts: { postId: params.postId } } },
-      { new: true }
-    );
-    if (!updatedUser) {
-      return res.status(404).json({ message: "Couldn't find user" });
-    }
-    return res.json(updatedUser);
-  },
+  }
 };
