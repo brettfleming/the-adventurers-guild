@@ -2,11 +2,7 @@ const router = require('express').Router();
 const {
   createUser,
   getSingleUser,
-  deletePost,
   login,
-  createPost,
-  addPostToUser,
-  getposts,
 } = require('../../controllers/user-controller');
 
 // import middleware
@@ -18,13 +14,5 @@ router.route('/').post(createUser);
 router.route('/login').post(login);
 
 router.route('/me').get(authMiddleware, getSingleUser);
-
-router.route('/feed').get(getposts);
-
-router.route('/feed').post(createPost, addPostToUser);
-
-router.route('/feed').put(authMiddleware, addPostToUser);
-
-router.route('/posts/:postId').delete(authMiddleware, deletePost);
 
 module.exports = router;
