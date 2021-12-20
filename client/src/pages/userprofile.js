@@ -19,6 +19,10 @@ return (
           <div>
             <p>class</p>
             <p>Race</p>
+            <p>level</p>
+          </div>
+          <div>
+            <p>stats</p>
           </div>
         </div>
     </div>
