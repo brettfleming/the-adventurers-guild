@@ -12,6 +12,15 @@ return (
   <>
     <div>
       <h2>Characters</h2>
+        <div>
+          <div>
+            <h3>Name</h3>
+          </div>
+          <div>
+            <p>class</p>
+            <p>Race</p>
+          </div>
+        </div>
     </div>
     <div>
       <h2>Friends</h2>
