@@ -6,6 +6,16 @@ import Dropdown from 'react-bootstrap/Dropdown'
 
 const UserProfile = () => {
 
+
+
+return (
+  <>
+  <h2>Characters</h2>
+  <h2>Campaigns</h2>
+  <Button to='/create'></Button>
+  </>
+
+);
  
 }
 
