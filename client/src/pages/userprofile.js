@@ -15,6 +15,11 @@ return (
     </div>
     <div>
       <h2>Friends</h2>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
     </div>
     <div>
       <h2>Campaigns</h2>
