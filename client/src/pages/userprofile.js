@@ -10,9 +10,16 @@ const UserProfile = () => {
 
 return (
   <>
-  <h2>Characters</h2>
-  <h2>Campaigns</h2>
-  <Button to='/create'></Button>
+    <div>
+      <h2>Characters</h2>
+    </div>
+    <div>
+      <h2>Friends</h2>
+    </div>
+    <div>
+      <h2>Campaigns</h2>
+    </div>
+  <Button to='/create'>Create</Button>
   </>
 
 );
