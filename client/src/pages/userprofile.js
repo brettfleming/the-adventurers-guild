@@ -36,6 +36,16 @@ return (
     </div>
     <div>
       <h2>Campaigns</h2>
+      <div>
+        <div>
+          <h3>title</h3>
+        </div>
+        <div>
+          <p>number of players</p>
+          <p>DM Name</p>
+          <p>description</p>
+        </div>
+      </div>
     </div>
   <Button to='/create'>Create</Button>
   </>
